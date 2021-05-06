@@ -11,7 +11,8 @@ class DB(object):
         self.cursor.execute(sql)
         for row in self.cursor:
             t.append(row)
-        return print(t)
+        return t
+
 
 
     def insert(self,sql):
