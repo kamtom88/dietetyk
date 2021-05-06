@@ -1,9 +1,9 @@
 from tkinter import *
 import tkinter.font as font
 import PIL.Image, PIL.ImageTk
-import DatabaseClass
-import ClassContainer
-import StartPageClass
-import AddProductClass
-import CreateDishClass
-import CreateDietClass
+import database_class
+import class_container
+import start_page_class
+import add_produc_class
+import create_dish_class
+import create_diet_class

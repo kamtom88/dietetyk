@@ -3,7 +3,7 @@ import libs
 LARGE_FONT = ("Verdana", 12)
 
 
-class Classcontainer(libs.Tk):
+class ClassContainer(libs.Tk):
 
     def __init__(self, *args, **kwargs):
         libs.Tk.__init__(self, *args, **kwargs)
@@ -16,14 +16,14 @@ class Classcontainer(libs.Tk):
 
         self.frames = {}
 
-        for F in (libs.StartPageClass.StartPage, libs.AddProductClass.AddProd, libs.CreateDishClass.CreateDish,libs.CreateDietClass.CreateDiet):
+        for F in (libs.start_page_class.StartPage, libs.add_produc_class.AddProd, libs.create_dish_class.CreateDish, libs.create_diet_class.CreateDiet):
             frame = F(container, self)
 
             self.frames[F] = frame
 
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.show_frame(libs.StartPageClass.StartPage)
+        self.show_frame(libs.start_page_class.StartPage)
 
     def show_frame(self, cont):
         frame = self.frames[cont]

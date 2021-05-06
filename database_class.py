@@ -1,6 +1,6 @@
 import pyodbc
 import ctypes
-class DB(object):
+class Db(object):
     def __init__(self,server='DESKTOP-KNOMOR7',database='Diet',username="sa",password="Password123"):
         self.conn=pyodbc.connect('DRIVER={SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
         self.cursor = self.conn.cursor()

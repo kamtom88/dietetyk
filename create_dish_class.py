@@ -8,13 +8,13 @@ class CreateDish(libs.Frame):
         img = libs.Label(self, image=render)
         img.image = render
         img.place(x=0, y=0)
-        self.createwidgets(controller)
-        self.instancja2 = libs.DatabaseClass.DB()
+        self.create_widgets(controller)
+        self.dbinstance2 = libs.database_class.Db()
 
-    def createwidgets(self,controller):
+    def create_widgets(self,controller):
         self.photo = libs.PhotoImage(file="D:\Python\Projekty\Projektb\Dietetyk\Images\strzalka.gif")
-        self.button1 = libs.Button(self, text="Back", bg='white',image = self.photo,
-                         command=lambda: controller.show_frame(libs.StartPageClass.StartPage)).place(x=10,y=10)
+        self.button1 = libs.Button(self, text="Back", bg='white', image = self.photo,
+                                   command=lambda: controller.show_frame(libs.start_page_class.StartPage)).place(x=10, y=10)
         self.framefortext=libs.Frame(self,width=285, height=160,bg="white")
         self.framefortext.place(x=680,y=30)
         self.text = libs.Text(self.framefortext, width=35, height=10)
@@ -22,14 +22,14 @@ class CreateDish(libs.Frame):
         self.label1=libs.Label(self, text="Czego Szukasz:").place(x=680, y=200)
         self.entry=libs.Entry(self)
         self.entry.place(x=770,y=200)
-        self.button2=libs.Button(self,text="szukaj",height = 1, width = 6, command = lambda: self.databasesearch())
+        self.button2=libs.Button(self,text="szukaj",height = 1, width = 6, command = lambda: self.database_search())
         self.button2.place(x=910, y = 200)
 
-    def databasesearch(self):
+    def database_search(self):
         product = self.entry.get()
         query = "select * from Produkty where NazwaProduktu like '%{}%'".format(product)
         self.text.delete(0.0,libs.END)
-        sqloutput = self.instancja2.query(query)
+        sqloutput = self.dbinstance2.query(query)
         self.text.insert(0.0,sqloutput)
 
 
