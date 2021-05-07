@@ -1,5 +1,6 @@
 import libs
 
+
 def main():
     app = libs.class_container.ClassContainer()
     app.title(("Dietetyk"))

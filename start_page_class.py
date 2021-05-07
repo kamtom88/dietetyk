@@ -14,7 +14,7 @@ class StartPage(libs.Frame):
 
     def create_widgets(self,controller):
 
-        self.add_product = libs.Button(self, text="Dodaj Produkt", command=lambda: controller.show_frame(libs.add_produc_class.AddProd), height = 2, width = 12).place(x=850, y=100)
+        self.add_product = libs.Button(self, text="Dodaj Produkt", command=lambda: controller.show_frame(libs.add_product_class.AddProd), height = 2, width = 12).place(x=850, y=100)
         self.create_dish = libs.Button(self, text="Stworz Danie", command=lambda: controller.show_frame(libs.create_dish_class.CreateDish), height = 2, width = 12).place(x=850, y=200)
         self.create_diet = libs.Button(self, text="Stworz Diete", command=lambda: controller.show_frame(libs.create_diet_class.CreateDiet), height = 2, width = 12).place(x=850, y=300)
 

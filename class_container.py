@@ -16,7 +16,7 @@ class ClassContainer(libs.Tk):
 
         self.frames = {}
 
-        for F in (libs.start_page_class.StartPage, libs.add_produc_class.AddProd, libs.create_dish_class.CreateDish, libs.create_diet_class.CreateDiet):
+        for F in (libs.start_page_class.StartPage, libs.add_product_class.AddProd, libs.create_dish_class.CreateDish, libs.create_diet_class.CreateDiet):
             frame = F(container, self)
 
             self.frames[F] = frame

@@ -1,5 +1,6 @@
 import libs
 
+
 class AddProd(libs.Frame):
 
     def __init__(self, parent, controller):
