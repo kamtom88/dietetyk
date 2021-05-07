@@ -1,5 +1,6 @@
 import libs
 
+
 class AddProd(libs.Frame):
 
     def __init__(self, parent, controller):
@@ -8,13 +9,13 @@ class AddProd(libs.Frame):
         img = libs.Label(self, image=render)
         img.image = render
         img.place(x=0, y=0)
-        self.createwidgets(controller)
-        self.instancja = libs.DatabaseClass.DB()
+        self.create_widgets(controller)
+        self.dbinstance = libs.database_class.Db()
 
-    def createwidgets(self,controller):
+    def create_widgets(self,controller):
         self.photo = libs.PhotoImage(file="D:\Python\Projekty\Projektb\Dietetyk\Images\strzalka.gif")
-        self.button1 = libs.Button(self, text="Back", bg='white',image = self.photo,
-                         command=lambda: controller.show_frame(libs.StartPageClass.StartPage)).place(x=10,y=10)
+        self.button1 = libs.Button(self, text="Back", bg='white', image = self.photo,
+                                   command=lambda: controller.show_frame(libs.start_page_class.StartPage)).place(x=10, y=10)
         # utwórz etykietęty
         self.myFont = libs.font.Font(family='Helvetica', size=10)
         t1 = ["Nazwa Produktu","kcal","Białko","Węglowodany","Tłuszcze"]
@@ -40,7 +41,7 @@ class AddProd(libs.Frame):
         # self.submit_bttn.grid(row=5, column=4, sticky=E)
     def click_button(self):
 
-        self.instancja.insert("insert into Produkty (NazwaProduktu,kcal,bialko,weglowodany,tluszcze)\
+        self.dbinstance.insert("insert into Produkty (NazwaProduktu,kcal,bialko,weglowodany,tluszcze)\
              values('{}',{},{},{},{})".format(self.name_ent.get(), self.kcal_ent.get(), self.bial_ent.get(),
                                               self.wegl_ent.get(), self.tl_ent.get()))
 

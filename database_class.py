@@ -1,6 +1,6 @@
 import pyodbc
 import ctypes
-class DB(object):
+class Db(object):
     def __init__(self,server='DESKTOP-KNOMOR7',database='Diet',username="sa",password="Password123"):
         self.conn=pyodbc.connect('DRIVER={SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
         self.cursor = self.conn.cursor()
@@ -11,7 +11,8 @@ class DB(object):
         self.cursor.execute(sql)
         for row in self.cursor:
             t.append(row)
-        return print(t)
+        return t
+
 
 
     def insert(self,sql):
